@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesha's Blessings</title>
+    <!-- Tailwind CSS for rapid, modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to our custom stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts for an elegant, festive feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-orange-50 text-gray-800">
+
+    <div id="app-container" class="container mx-auto p-4 flex flex-col h-screen max-w-2xl">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-6 relative">
+    <h1 class="text-4xl md:text-5xl font-bold text-orange-700 font-serif">🙏 Ganesha's Blessings 🙏</h1>
+    <p class="text-md md:text-lg text-orange-600 mt-2">Share your prayers and worries. ᬒᬁ is listening.</p>
+
+</header>
+
+        <!-- Chat Display Area -->
+        <main id="chat-window" class="flex-1 bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg p-4 md:p-6 overflow-y-auto mb-6 border border-orange-200">
+            <!-- Initial message from Ganesha -->
+            <div class="message bot-message flex justify-start mb-4">
+                <div class="bg-white rounded-xl p-3 shadow-sm max-w-md">
+                    <p class="font-bold text-orange-600">Ganesha</p>
+                    <p>ॐ श्री गणेशाय नमः! I am here to listen. What is on your mind, my child?</p>
+                </div>
+            </div>
+            <!-- User and Bot messages will be appended here by JavaScript -->
+        </main>
+
+        <!-- Prayer Input Section -->
+        <footer class="bg-transparent">
+            <form id="prayer-form" class="flex items-center bg-white rounded-full shadow-md border border-orange-200 p-2">
+                <input type="text" id="prayer-input" placeholder="Type your prayer here..." class="flex-1 p-3 bg-transparent border-none focus:outline-none text-lg" autocomplete="off" required>
+                <button type="submit" id="send-btn" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-5 rounded-full transition-colors duration-300 flex items-center justify-center">
+                    <!-- Send Icon SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </footer>
+
+        <!-- Background Chant Audio & Control -->
+        <audio id="chant-audio" src="{{ url_for('static', filename='ganesh-chant.mp3') }}" loop></audio>
+        <button id="audio-toggle" class="fixed bottom-24 right-5 bg-white/80 backdrop-blur-sm text-orange-500 rounded-full p-3 shadow-lg hover:bg-white transition-transform transform hover:scale-110 border border-orange-200 z-10">
+            <!-- Volume Icon SVG -->
+            <svg id="volume-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            <!-- Mute Icon SVG (initially hidden) -->
+            <svg id="mute-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="hidden"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+        </button>
+
+<!-- Background Chant Audio -->
+<audio id="chant-audio" src="{{ url_for('static', filename='ganesh-chant.mp3') }}" loop></audio>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
