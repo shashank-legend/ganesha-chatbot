@@ -324,6 +324,6 @@ The Google Fonts used (Inter, Yatra One) are under the SIL Open Font License and
 ## Author
 
 **Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [your-profile](https://www.linkedin.com/in/your-profile)
-- Email: your.email@example.com
+- GitHub: [@shashank-legend](https://github.com/shashannk-legend)
+- LinkedIn: [K Shashank Reddy](https://www.linkedin.com/in/shashank-reddy-k-903607332/)
+- Email: harshashank.2005@gmail.com
