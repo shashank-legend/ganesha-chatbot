@@ -1,11 +1,21 @@
-# Python
-venv/
-__pycache__/
-*.pyc
-
-# Environment
+# Secrets
 .env
+.env.*
+!.env.example
 
-# IDE
-.vscode/
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Audio recordings / local data
+*.wav
+*.mp3
+
+# OS / editor
+.DS_Store
 .idea/
+.vscode/
